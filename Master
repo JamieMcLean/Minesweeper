@@ -1,4 +1,25 @@
-def bombBoardOne():
+import time
+import random
+
+def menu():
+    print("Welcome to this pretty simple game of Minesweeper.")
+    time.sleep(1)
+    print("If you want to play press 1")
+    time.sleep(1)
+    answer = int(input("Otherwise press 2    "))
+    
+    if answer == 1:
+        print("Safe")
+        playgame()
+    elif answer == 2:
+        print("Bye")
+        import sys
+        if 10/5 == 2:
+            sys.exit()
+    else:
+        print("Try again")
+        menu()
+        
     boardOne = ['O', 'O', 'O', 'O', 'O', 'O', 'O', '1', '@',
                 'O', 'O', 'O', 'O', 'O', 'O', '1', '2', '1',
                 '1', '1', '2', '1', '1', '1', '@', '1', 'O',
@@ -8,14 +29,8 @@ def bombBoardOne():
                 '1', '1', '1', '1', '2', '@', '2', '1', '1',
                 'O', '1', '2', '@', '1', '1', '2', '@', '1',
                 'O', '1', '@', '2', '1', 'O', '1', '1', '1',]
-    counter = 0
-    for x in range(0,9):
-        print("\n")
-        for y in range(0,9):
-            boardOne[counter], " ", end=""
-            counter = counter + 1
 
-def bombBoard2():
+
     bombBoard2 = ['O','O','1','2','@','1','O','O','O',
                   'O','O','1','@','2','2','1','1','O',
                   'O','O','1','2','2','2','@','1','O',
@@ -25,14 +40,8 @@ def bombBoard2():
                   'O','O','1','@','2','3','@','2','O',
                   'O','O','1','2','@','3','@','3','1',
                   'O','O','O','1','1','2','2','@','1']
-    counter = 0
-    for i in range(0,9):
-        print("\n")
-        for j in range (0,9):
-            bombBoard2[counter]," ",end=""
-            counter = counter+1
 
-def bombBoard3():
+
     placement = ['O','1','@','2','@','O','O','1','@',
                  'O','O','1','O','O','1','O','O','1',
                  'O','O','O','O','2','O','O','O','O',
@@ -42,14 +51,8 @@ def bombBoard3():
                  'O','O','@','O','O','2','@','2','O',
                  '1','2','O','O','O','1','O','O','O',
                  '@','1','O','O','O','O','O','O','O']
-    counter = 0
-    for i in range(0,9):
-        print ('\n')
-        for p in range(0,9):
-            placement[counter],'',end=''
-            counter = counter + 1
 
 
 def main():
-
+    menu()
 main()
