@@ -1,25 +1,6 @@
 import time
 import random
 
-def menu():
-    print("Welcome to this pretty simple game of Minesweeper.")
-    time.sleep(1)
-    print("If you want to play press 1")
-    time.sleep(1)
-    answer = int(input("Otherwise press 2    "))
-    
-    if answer == 1:
-        print("Safe")
-        playgame()
-    elif answer == 2:
-        print("Bye")
-        import sys
-        if 10/5 == 2:
-            sys.exit()
-    else:
-        print("Try again")
-        menu()
-        
     boardOne = ['O', 'O', 'O', 'O', 'O', 'O', 'O', '1', '@',
                 'O', 'O', 'O', 'O', 'O', 'O', '1', '2', '1',
                 '1', '1', '2', '1', '1', '1', '@', '1', 'O',
@@ -52,6 +33,37 @@ def menu():
                  '1','2','O','O','O','1','O','O','O',
                  '@','1','O','O','O','O','O','O','O']
 
+
+def showGrid():
+    board= []
+    for i in range(9):
+        board.append([])
+        for x in range(9):
+            board[i].append('+')
+    for row in board:
+        print ("  ".join(row))
+
+def playgame():
+    showgrid()
+    
+def menu():
+    print("Welcome to this pretty simple game of Minesweeper.")
+    time.sleep(1)
+    print("If you want to play press 1")
+    time.sleep(1)
+    answer = int(input("Otherwise press 2    "))
+    
+    if answer == 1:
+        print("Safe")
+        playgame()
+    elif answer == 2:
+        print("Bye")
+        import sys
+        if 10/5 == 2:
+            sys.exit()
+    else:
+        print("Try again")
+        menu()
 
 def main():
     menu()
