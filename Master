@@ -36,16 +36,28 @@ import random
 
 def showGrid():
     board= []
-    for i in range(9):
+    for i in range(5):
         board.append([])
         for x in range(9):
             board[i].append('+')
     for row in board:
         print ("  ".join(row))
 
-def playgame():
-    showgrid()
+def firstGo():
+    game = False
+    score = 0
+    userInput = input("Please type the coordinates you would like to choose: ")
+    boards = [boardOne,bombBoard2,placement]
+    z = random.randint(boards)
+    firstMove = z.pop(userInput)
+    if firstMove == '@':
+        game = True
+        print("GAme over!")
+    else:
+        firstGo()
     
+    
+        
 def menu():
     print("Welcome to this pretty simple game of Minesweeper.")
     time.sleep(1)
@@ -55,7 +67,7 @@ def menu():
     
     if answer == 1:
         print("Safe")
-        playgame()
+        showGrid()
     elif answer == 2:
         print("Bye")
         import sys
@@ -66,5 +78,7 @@ def menu():
         menu()
 
 def main():
-    menu()
+    anyMenu = menu()
+    anyGrid = showGrid()
+    anyGo = firstGo()
 main()
